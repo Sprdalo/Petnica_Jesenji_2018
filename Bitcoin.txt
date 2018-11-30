@@ -1,0 +1,56 @@
+Quest for digital currency
+
+-Started in 90s
+	DigiCash,E-Gold,PayPal,Libery reserve
+-All were centralized
+-Killed by US government because of money laundering.
+-Because digital money creates new scam methods, and financial institutions were not ready, digital currency had to be DISTRIBUTED
+
+How to create distributed currency?
+	-Paper cant be copied. Information can. So we need database of all coins and their owners
+	-That database is single point of failure and control. It must be distributed.
+	-Distributed database are HARD. Distributed databases on thousands of untrusted computers are very very hard.
+
+Problems
+	-Authentication
+		Only I can spend my money
+	-Privacy
+		All transactions are public
+	-Trust, Intergrity
+		Somebody can change the data
+	-Consistency, Integrity
+		Hash, Clearing
+
+	Solutions
+	-Authentication 
+		Public key cryptography
+	-Privacy
+		Public key cryptography
+	-Trust, Intergrity
+		Clearing
+	-Consistency, Integrity
+		Hash, Clearing
+
+Public key cryptography
+	- Public key is adress:
+	- 1h91r981289r219hr8921h
+	- (start with 1 or 3 or bc1)
+Private key :
+	- 865880ryu 01n0580ayn8s5 yn5an 58onas 
+
+POW alogoritm
+	- SHA-256
+	- Scrypt
+	- Ethash
+	- Quark
+	- Groestl
+	- Blake-256
+	- Neoscrypt
+	- Lyra2REv2
+
+Attacks 
+	- 51% Attack
+	- Denial of Service (DoS)
+	- Double-spend
+	- Sybil Attack
+	- Cryptographic Attack
