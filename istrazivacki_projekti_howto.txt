@@ -1,0 +1,121 @@
+Istrazivacki projekti - HOW TO
+
+Cilj je ucenje istrazivackog procesa kroz:
+	- Planiranje
+	- Implementacija
+	- Evaluacija (prikupljanje rezultata)
+	- Dokumentovanje
+	- Prezentaciju rezultata
+
+1) Prvi predlog nikada nije i ne treba da bude krajnji predlog.
+2) Krajnji predlog mora biti formiran NAJKASNIJE do letnjeg seminara uz konsultaciju sa saradnicima i rukovodiocem
+3) Sto se pre sastavi krajnji predlog - vise vremena za implementaciju i dodatna ispitivanja
+4) Projekat za cilj mora imati istrazivanje, ispitivanje necega
+
+Naucna metodologija
+	- Postavljanje hipoteze - pretpostavke - zimski seminar
+	- Pravljenje plana implementacije i ealuacije - period posle zimskog a pre letnjeg
+	- Implementacija - letnji seminar
+	- Verifikacija implementacije - letnji seminar
+	- Prikupljanje rezultata - kraj letnjeg seminara
+	- Pisanje naucnog rada kao izvestaj o rezultatima istrazivanje - poslednji dani letnjeg seminara i jesenji seminar
+
+Smernica za postavljanje hipoteze
+	- Odabir problema koji zelimo da resimo
+	- Odabir skupa algoritama za koje zelimo da uradimo evaluaciju (mogu biti i neki novi algoritmi)
+	- Odabir metrika uz pomoc kojih merimo uspesnost odredjenog algoritma za resavanje problema
+	- Rezultati se onda dobijaju prstom komparacijom algoritama iz ovoga skupa
+	- Pretpostavka: neki podskup gornjeg skupa ce pokazati bolje rezultati nego ostali po odabranim metrikama
+
+Primeri
+	- Problem: prepoznavanje lica
+	- Metrike: preciznost, racnost, odziv, brzina, kolicina potrebnog prostora
+	- Algoritmi: eigenface, neuronske mreze, linearna klasifikacija
+	- Hipoteza: eigenface ce pokazati najbolju preciznost, odziv, tacnost, dok ce linearna klasifikacija biti najbrza
+
+	- Problem: izrada jezika
+	- Metrike: prosecan broj linija za resavanje nekog skupa problema, ekspresivnost
+	- Jezici: taj novi custom jezik, C, Haskell, LISP, Java, ...
+	- Hipoteza: Potrebno je najmanje linija koda u custom jeziku da se napravi X
+
+Referentna vrednost:
+	- Moramo uvek porediti sa nekom referentnom vrednoscu
+	- Komparacijom saznajemo da li je nesto bolje ili losije
+	- Ako ne poredimo sa referentnom vrednoscu, rad ne znaci nista
+	- Zbog ovoga, skup algoritama (metoda, jezika, ...), mora uvek imati vise od jednog elementa
+	- Rad u kom se ispostavi da je vas algoritam losiji od drugih je opet validan rad
+	- Bolje imati rad koji objasnjava zasto je nesto lose nego rad koji ne poredi i ne objasnjava nista
+
+Kako do ideje?
+	- Njutnova jabuka ni Njutnu nije pala na glavu pa nece ni nikom drugom
+	- Pokusajte da uvidite sopstvene probleme
+	- Citanje tehnickih blogova, radova, ...
+	- Ako radite na nekom projektu sada, mora da postoji prostor za inovaciju
+	- Belezenje ideja u svesku
+
+Koristan link: arxiv.org gde se objavljuju radovi iz raznih oblasti.
+
+Teorija
+	- Teorija je izuzetno vazna da razumete oblast i proble kojim se bavite i da kasnije lakse mozete da isplanirate implementaciju projekta
+	- Potrebno upoznavanje sa svom matematikom iza odabranih algoritama
+	- Primeri: statistika, teorija grafova, linearna algebra
+	- Ako se bavite simulacijom: potrebno je upoznavanje sa datim modelima datog fenomena
+	- Ako se bavite izradom jezika: leksicka analiza, konacni automati, parsiranje, AST
+	- Poznavanje teorije pomaze da se bolje definisu metrike
+
+Pretraga algoritama
+	- Velika je verovatnoca da je jos neko pokusao da resi dati problem
+	- Pre inoviranja novog algoritma, pretraziti postojece
+	- Google scholar i literatura iz date oblasti
+
+Implementacija
+	- U ovoj fazi mnogi projekti propadaju!
+	- Glavni razlozi: lose poznavanje teorije i/ili lose poznavanje programiranja
+
+Odabir alata
+	- Uzmite nesto gde se snalazite
+	- Jezik
+	- Framework
+	- Okruzenje
+	- OS? Compiler? Uredjaj?
+	- Ako koristite novu tehnologiju
+		+ citanje dokumentacije
+		+ terminologija moze da se ne poklapa sa terminologijom iz literature
+		+ "pesak" za novu tehnologiju pre projekta - da vam udje "pod prste"
+	- KISS (keep it simple stupid :)
+	- Koristiti proverene alate su velikom zajednicom i dokumentacijom ako je moguce
+
+Planiranje implementacije
+	- Podela na male module
+	- Jedan modul treba da radi jednu operaciju
+	- Smanjiti zavisnost izmedju modula upotrebom "interface-a"
+	- Linearna prosirivost sistema
+	- Napravite TO-DO listu gde svaki zadatak traje najvise 2 sata
+
+Dodatni alat i metodologija
+	- Unit testovi
+	- Version control system (git, svn, mercurial, ...)
+	- Debugger (gdb)
+	- Profiler (valgrind, plop, ...)
+	- Build system (autotools, cmake, ...)
+
+Evaluacija
+	- Radi se za svaku metriku za svaki algoritam
+	- Podatka: cuvati tabelarno
+	- Grafikoni (bar plot, kriva, histogram, pita, mapa inteziteta, graf, ...)
+	- Primeri koda u novom jeziku
+	- Animacija simulacije
+
+Pisanje rada
+	- Kljucne reci
+	- Naslov
+	- Uvod
+	- Opis metoda i algoritama
+	- Prezentacija rezultata
+	- Diskusija, zakljucak i predlozi uz unapredjenje
+	- Apstrakt
+
+Za kraj
+	- Cilj je ucenje kroz projektni rad
+	- Konferencija nije cilj vec alat
+	- Pitanja?

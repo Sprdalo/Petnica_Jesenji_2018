@@ -1,0 +1,108 @@
+Kako od glupog uredjaja napraviti "pametnu stvar"
+
+	- dodati mu senzore
+	- povezati mu na pokretne delove aktuatore
+	- kontrolisati mu on/off napajanja relejima ili optokaplerima
+	- upravljati ga mikrokontrolerima ili single-board racunarima
+	- povezati ga sa ostalim uredjajima u kuci
+	- povezati ga sa nadzorno upravljackim aplikacijama na internetu
+
+Da li to puno kosta?
+Zavisi...
+	
+	- od toga koliko ste spremni da ucite
+	- od toga koliko poznajete elektroniku
+	- od toga koliko poznajete programiranje
+	- od toga koliko ste uporni da savladate prepreke
+	- od toga da li koristite elektronsko placanje
+	- od toga koliko kosta "glupi" uredjaj (ako postane neupotrebljiv posle vase intrevencije)
+
+Da li je free uvek besplatno
+	
+	- moze da bude ali i ne mora
+	- FLOSS - Free/Libre and Open Source Software znaci da je slobodno njegovo koriscenje ali nije obavezno i da je besplatno
+	- FOSH - Free and Open-Source Hardware ne znaci da vam neko poklanja uredjaje nego da vam daje nacrte, seme, listu delova i ostalo na osnovu cega mozete napraviti svoj uredjaj
+
+A za nas lenje
+	- Raspberry Pi (pimoroni)
+		+ python
+		+ cpp
+		+ java
+		+ scratch
+		+ ruby 
+	- Arduino
+		+ cpp
+		+ Arduino Software IDE
+	- NodeMCU
+		+ LUA
+		+ Arduino Software IDE
+
+Sta je bitno da znamo u vezi elektronike
+	- Struja ubija
+	- Ako bas i ne ubije vas, moze da sprzi uredjaj ili komponentu ako ne vodite racuna o naponu na kojem je predvidjeno da sme da radi
+	- Neke komponente razgvovaraju analogno a neke digitalno
+		+ analogne salju bilo koji napon 0 i Vmax 
+		+ digitalne mogu da budu samo 0 ili Vmax
+	- Procesor ne razume analogni govor pa ga je potrebno prevesti A/D konvertorom u digitalni
+		+ Napomenuti razvojni sistemi uglavnom poseduju A/D konvertore
+	- Ne postoji samo jedan digitalni "jezik". Potrebno je poznavati komunikacioni protokol da vi se komponente "sporazumele"
+		+ za vecinu protokola vec postoje odgovarajuce biblioteke (npr. 1-wire, I2C)
+
+Gde se to moze nabaviti
+	- Kod domacih distributera
+		+ mikroprinc, saperel,...
+		+ skupo
+	- Kod proizvodjaca
+		+ neki ne isporucuju u nasu zemlju
+	- Na on-line shopping sajtovima
+		+ eBay, Aliexpress, DX, Amazon
+		+ obicno je puno povoljnije nego kod nas (za nas vecinu sitnica Carina ne naplati cak ni PDV)
+		+ "strpljen - spasen" ... vreme isporuke zna da bude i duze od mesec dana
+		+ Kinezi
+
+Pa da pocnemo
+				sa predstavljanjem nekih od modela proizvoda
+
+Sta nabaviti prvo
+	- slika
+
+Rec dve o napajanju
+	- Napon
+		+ jednosmeran (DC) i stabilisan
+		+ 5V (cesto se koristi zbog kompatibilnosti sa USB)
+		+ 3.3V (omiljen kod jednog broja komponenti)
+		+ 9-12V (samo preko reuglatora ili ulaza predvidjenih za to)
+	- Struja
+		+ 500mA ili veca
+		+ 1A za uobicajenu upotrebu kod Arduina
+		+ 2A i vise za RPI ili ukoliko ima GSM/GPRS komponenti
+		+ odvojeni izvor napajanja za vece potrosace i motore
+
+Umrezavanje
+	- direktno
+		+ podaci se ne cuvaju ili se cuvaju samo kratko vreme
+		+ wifi AP i web server su na samom uredjaju
+	- u LAN-u
+		+ uredjaji se povezuju preko rutera
+		+ podaci mogu da se duze cuvaju
+		+ web server moze da bude smesten na single-board racunaru u okviru iste mreze
+	- u oblaku
+		+ uredjaji salju podatke na VPS ili cloud
+		+ kompleksniji RDBMS mogu da se koriste za cuvanje
+		+ moguca je i ozbiljnija obrada podataka na serveru
+
+Bezbednost
+	- Ukoliko je potrebno kontrolisati neki aktuator od spolja, povecava se rizik za bezbednosne propuste i provalu u lokalnu mrezu
+	- Otvaranje rupa u firewall-ovima ili smestanje DMZ jeste moguce resenje ali zahteva naprednije poznavanje administracije mreza
+	- Sigurnije resenje je koriscenje odgovarajucih protokola koji omogucavaju kontrolu spolja bez potrebe za podesavanjima na firewall-u
+
+MQTT (MQ Telemetry Transport)
+	- zasniva se na principu izdavac - pretplatnik
+	- za funkcionisanje je potreban broker koji posreduje izmedju publishera i subscribera
+	- jedan broker u oblaku obezbedjuje bezbednost ali ne i zilavost (sistem je neupotrebiv ako dodje do prekida veze)
+	- kombinacijom 2 brokera obezbedjuje se autonomija kriticnih podsistema
+
+Kako spreciti lazne signale
+	- sifrovanjem poruka (moze da bude izazov za uredjaje slabijih performansi)
+	- dodavanjem kriptografskog checksum-a (uz koriscenje tajne lozinke)
+	
